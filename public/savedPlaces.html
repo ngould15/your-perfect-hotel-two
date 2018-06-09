@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow|Courgette|Dancing+Script|Playfair+Display+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Combo|El+Messiri|Give+You+Glory|Oldenburg|Pacifico|Scope+One" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- add bootstrap jquery -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/project.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle.all.2.74.js"></script>
+    <title>Your Saved Places</title>
+</head>
+
+<body>
+    <header class="sticky-top">
+        <div class="col-md-12">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav navbar-left">
+                            <li class="active">Welcome
+                                    <span class="member-name"></span>!
+                                </li>
+                                <li>
+                                        <a href="/home">Search</a>
+                                    </li> 
+                        <li>
+                            <a href="/logout">Log Out</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div id="slideshow">
+        <img src="assets/img/barn.jpg" class="bgM" />
+        <img src="assets/img/beach.jpg" class="bgM" />
+        <img src="assets/img/city.jpg" class="bgM" />
+        <img src="assets/img/crater.jpg" class="bgM" />
+        <img src="assets/img/ricesteps.jpg" class="bgM" />
+        <img src="assets/img/lake.jpg" class="bgM" />
+        <img src="assets/img/mountain.jpg" class="bgM" />
+    </div>
+    <div id="wrap">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" id="whitebackground">
+                    <div class="page-header">
+                        <h1>
+                            <b>Your Perfect Hotel</b>
+                        </h1>
+                        <h2>..Just One Click Away!</h2>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- DISPLAY SAVED LISTS HERE -->
+            <div id="savedListsDiv">
+                <form>
+                    <select id="savedList">
+                    </select>
+                    <input id="submitPlace" type="submit" value="Submit">
+                    <span id="formList"></span>
+                </form>
+
+            </div>
+
+
+            <table class="table table-striped hidden" id="table">
+                <thead id="tableHeader">
+                    <tr>
+                        <th>Delete</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Category</th>
+                        <th>Recommendation</th>
+                    </tr>
+                </thead>
+                <tbody id="tableRows">
+
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="col-md-12 hidden" id="mapHolder">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Your Results on Google Maps</h3>
+                    </div>
+                    <div id="map">
+                    </div>
+                  </div>
+                </div>
+
+        </div>
+
+    </div>
+
+
+
+
+        
+        <div  id="add"></div>
+        <div class="  clearfooter"></div>
+        
+        <div id="footer">
+            
+              <p class="footer-block">&copy Copyright 2018 Gabi Nicole Jocelyn cbelle</p>
+            
+          </div>
+
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIxGfQn0QePtVWkz6vFL31V-gi7hbKLnY&callback=initMap&libraries=places"
+            async defer></script>
+        <script type="text/javascript" src="js/members.js"></script>
+
+
+
+        <script>
+            $(document).ready(function () {
+                $('#slideshow').cycle({
+                    fx: 'fade',
+                    pager: '#smallnav',
+                    pause: 1,
+                    speed: 3000,
+                    timeout: 3500
+                });
+            });
+        </script>
+
+        <script type="text/javascript" src="js/savedPlaces.js"></script>
+
+
+</body>
+
+</html>
